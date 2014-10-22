@@ -1006,6 +1006,15 @@ public:
         SkPaint           fDefaultPaint;
         bool              fDone;
     };
+    
+    /**
+     DEPRECATED -- need to remove when subclass stop relying on it.
+
+     Specify a device for this canvas to draw into. If it is not null, its
+     reference count is incremented. If the canvas was already holding a
+     device, its reference count is decremented. The new device is returned.
+     */
+     virtual SkBaseDevice* setDevice(SkBaseDevice* device);
 
 protected:
     // Returns the canvas to be used by DrawIter. Default implementation
